@@ -1,0 +1,34 @@
+---
+en:
+  loading: Loading
+  destinations: Destinations
+  tours: Tours
+  schedules: Schedules
+  vehicles: Vehicles
+  pages: Pages
+  companies: Companies
+  employees: Employees
+  orders: Orders
+  credit_cards: Credit Cards
+  user_infos: User Infos
+  emails: Emails
+  telephones: Telephones
+  addresses: Addresses
+  accounts: Accounts
+  payments: Payments
+  vouchers: Vouchers
+  company_receivables: Company Receivables
+  schedule_balances: Schedule Balances
+  input_types: Input Types
+  configurations: Configurations
+  permalink: Permalink
+  meta_keywords: Meta Keywords
+  title: Title
+  meta_description: Meta Description
+  id: Id
+  title_cn: Title Cn
+  city: City
+  status: Status
+  schedule_id: Schedule Id
+  tour: Tour
+  days: Days

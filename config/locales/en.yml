@@ -1,5 +1,30 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  travel_website:
+    shared:
+      login_bar:
+        log_in: Log In
+        lang: 中文
+  sign_up: Sign Up
+  switch_host: Switch Host
+  Home: Home
+  Destination: Destination
+  Bus Tour: Bus Tour
+  Package: Package
+  Cruise: Cruise
+  Airline Ticket: Airline Ticket
+  Hotel: Hotel
+  Rent Bus: Rent Bus
+  About Us: About Us
+  search_destination: "Destination:"
+  hot_destinations: Hot Destinations
+  hot_tours: Hot Tours
+  photo_gallery: Photo Gallery
+  Tours: Tours
+  related_tours: Related Tours
+  days_tour:
+    one: "1day tour"
+    other: "%{count} days tour"
+  more_days_tour: "4 and more days tour"
+  price: Price

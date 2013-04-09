@@ -11,7 +11,8 @@
 .col-336{float:left;position:relative;width:336px;}
 .list-108 {
 	list-style: none outside none;
-	li {float:left;width:114px;margin-right:8px;line-height:18px;padding-bottom:5px;white-space:nowrap;overflow:hidden;}
+  background: url(<%= image_path("store/home/world-map.gif") %>) no-repeat scroll 90px 15px transparent;
+	li {float:left;width:172px;margin-right:8px;line-height:18px;padding-bottom:5px;white-space:nowrap;overflow:hidden;}
 }
 .list-184 {
 	list-style: none outside none;
@@ -22,7 +23,8 @@
 .color-block {background-color:#F5F5F5;}
 .ad-block {background-color:#EFF5F5;}
 .search-block {border-left:solid 6px #efefef;border-bottom:solid 1px #efefef;}
-.content-block {padding:16px;margin-bottom:16px;}
+.content-block {padding:16px;}
+.seperate-block {margin-bottom:16px;}
 .block {margin-bottom:16px;overflow:hidden;}
 
 a { color: $ptn_6;}
@@ -69,6 +71,14 @@ a { color: $ptn_6;}
     width: 212px;		
 	}
 .main-content {margin-top:16px;margin-bottom:16px;}
+.breadcrumbs {
+	color: #555;
+	font-size: 90%;
+	a:link, a:visited {color:#555;}
+  ul{
+    li{float:left;padding:4px;}
+  }
+}
 #content {float: left;position: relative;width: 628px;
 
 
@@ -102,19 +112,6 @@ a { color: $ptn_6;}
 	font-size: 9px;
 	color: white;
 	a { color: white;}
-}
-
-/* map */
-#mapholder {
-    background: url(<%= image_path("store/home/hp-map.gif") %>) no-repeat scroll 0 0 transparent;
-    display: block;
-    height: 161px;
-    position: relative;
-    width: 260px;
-}
-.map-nav {
-  position: absolute;
-  right: 10px;
 }
 
 /* icons listing */

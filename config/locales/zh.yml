@@ -1,0 +1,28 @@
+zh:
+  travel_website:
+    shared:
+      login_bar:
+        log_in: 登錄
+        lang: English
+  sign_up: 註冊新用戶
+  switch_host: Switch Host
+  Home: 首頁
+  Destination: 熱門景點
+  Bus Tour: 巴士團
+  Package: 飛機團
+  Cruise: 遊輪
+  Airline Ticket: 機票
+  Hotel: 酒店
+  Rent Bus: 租用巴士
+  About Us: 關於我們
+  search_destination: "搜索景點:"
+  hot_destinations: 熱門景點
+  hot_tours: 熱門路線
+  photo_gallery: 圖片集
+  Tours: 旅遊團
+  related_tours: 相關旅遊團
+  days_tour:
+    one: "一日遊"
+    other: "%{count}日游"
+  more_days_tour: "多日遊(4天或以上)"
+  price: 價格
