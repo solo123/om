@@ -5,4 +5,4 @@
 .ln-letters a:hover,
 .ln-letters a.ln-selected { background-color:#eaeaea; }
 .ln-letters a.ln-disabled { color:#ccc; }
-.ln-letter-count { text-align:center; font-size:0.8em; line-height:1; margin-bottom:3px; color:#336699; }
+.ln-letter-count { text-align:center; font-size:0.8em; line-height:1; margin-top:-13px; color:#336699; }

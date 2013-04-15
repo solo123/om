@@ -35,3 +35,12 @@ table.order-table{
     li {margin-bottom: 6px;}
   }
 }
+
+
+.order{
+  .info-text {font-size: 80%; color: #555;
+    label {color: $ptn_4;}
+}
+  .info-data {color: $ptn_5;}
+}
+
