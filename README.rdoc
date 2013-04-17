@@ -1,5 +1,16 @@
 == Update History
 
+* 2013-04-18
+. schedules自动生成移动到tours列表中，操作更直观；
+. 网站添加弹出窗口登录，避免下单前登录导致页面切换；
+. 检查修改网站订单流程；
+. 增加buy 2 get 1 free设置；
+ 
+* 2013-04-15 *
+. Admin UI从Jquery-UI迁移到BootStrap-UI
+. 增加Buy 2 get 1 free设置
+. Destinations可按字母序选择
+
 * 2013-04-09 *
 . 自定義pages頁面status=0時，不顯示在網站上；
 . 修改schedule下單時錯誤，下單時客戶選擇可以通過用戶名、電話、email；

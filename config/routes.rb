@@ -4,7 +4,7 @@ Omei::Application.routes.draw do
       get '/employees/edit' => 'devise/registrations#edit', :as => 'edit_employee_registration'
       put 'employees' => 'devise/registrations#update', :as => 'employee_registration'
     end
-  devise_for :users, :controllers => {:passwords => 'TravelWebsite::passwords'}
+  devise_for :users, :controllers => {:passwords => 'TravelWebsite::passwords', :sessions => 'TravelWebsite::sessions'}
 
   mount TravelWebsite::Engine, :at => '/'
   mount TravelAdmin::Engine, :at => 'omeiadmin'
