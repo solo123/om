@@ -1,5 +1,12 @@
 == Update History
 
+* 2013-04-20
+. 修改Add Schedule，菜单放在tours列表中；
+. login相应回车键；
+. 座位表下单；
+. pay cash,credit card, check
+. vehicle shifts排班表
+
 * 2013-04-18
 . schedules自动生成移动到tours列表中，操作更直观；
 . 网站添加弹出窗口登录，避免下单前登录导致页面切换；
