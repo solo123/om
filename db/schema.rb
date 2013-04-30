@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408095246) do
+ActiveRecord::Schema.define(:version => 20130430130625) do
 
   create_table "account_histories", :force => true do |t|
-    t.integer  "balance_object_type"
+    t.string   "balance_object_type"
     t.integer  "balance_object_id"
     t.integer  "payment_id"
     t.decimal  "balance_before",      :precision => 8, :scale => 2, :default => 0.0
@@ -47,6 +47,10 @@ ActiveRecord::Schema.define(:version => 20130408095246) do
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
   end
+
+  add_index "addresses", ["address1"], :name => "index_addresses_on_address1"
+  add_index "addresses", ["address2"], :name => "index_addresses_on_address2"
+  add_index "addresses", ["zipcode"], :name => "index_addresses_on_zipcode"
 
   create_table "ads", :force => true do |t|
     t.string   "url"
@@ -199,6 +203,8 @@ ActiveRecord::Schema.define(:version => 20130408095246) do
     t.datetime "updated_at",                     :null => false
   end
 
+  add_index "emails", ["email_address"], :name => "index_emails_on_email_address"
+
   create_table "employee_infos", :force => true do |t|
     t.integer  "employee_id"
     t.integer  "company_id"
@@ -213,6 +219,8 @@ ActiveRecord::Schema.define(:version => 20130408095246) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
+
+  add_index "employee_infos", ["nickname"], :name => "index_employee_infos_on_nickname"
 
   create_table "employee_shifts", :force => true do |t|
     t.integer "employee_info_id"
@@ -298,6 +306,7 @@ ActiveRecord::Schema.define(:version => 20130408095246) do
     t.integer  "last_payment"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "from_agent_id"
   end
 
   create_table "order_items", :force => true do |t|
@@ -470,6 +479,18 @@ ActiveRecord::Schema.define(:version => 20130408095246) do
 
   add_index "preferences", ["key"], :name => "index_preferences_on_key", :unique => true
 
+  create_table "refund_cashes", :force => true do |t|
+    t.integer  "payment_id"
+    t.decimal  "refund_amount",  :precision => 8, :scale => 2
+    t.decimal  "refund_fee",     :precision => 8, :scale => 2, :default => 0.0
+    t.decimal  "amount",         :precision => 8, :scale => 2, :default => 0.0
+    t.integer  "received_by_id"
+    t.integer  "account_id"
+    t.integer  "status",                                       :default => 0
+    t.datetime "created_at",                                                    :null => false
+    t.datetime "updated_at",                                                    :null => false
+  end
+
   create_table "remarks", :force => true do |t|
     t.string   "note_data_type"
     t.integer  "note_data_id"
@@ -545,6 +566,8 @@ ActiveRecord::Schema.define(:version => 20130408095246) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
   end
+
+  add_index "telephones", ["tel"], :name => "index_telephones_on_tel"
 
   create_table "todo_workers", :force => true do |t|
     t.integer  "todo_id"
@@ -622,6 +645,8 @@ ActiveRecord::Schema.define(:version => 20130408095246) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
+
+  add_index "user_infos", ["full_name"], :name => "index_user_infos_on_full_name"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

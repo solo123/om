@@ -1,5 +1,19 @@
 == Update History
 
+* 2013-04-29
+. 显示用户详细信息、照片和历史订单;
+. 修改员工信息；
+. 修改shifts显示包括错误分配占用的信息；
+
+* 2013-04-27
+. 添加员工shifts
+. 修正车辆shifts
+. agent订单
+. 撤销订单时自动生成voucher
+. 生成Schedules增加明确提示
+. 带初始条件的find-user
+
+
 * 2013-04-20
 . 修改Add Schedule，菜单放在tours列表中；
 . login相应回车键；
