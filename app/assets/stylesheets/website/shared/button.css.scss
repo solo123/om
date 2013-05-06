@@ -270,3 +270,12 @@
   .ui-button-text {line-height: 1; padding-left: 22px;}
 }
 
+.small-link{
+  color: #78b100;
+  font-size:12px;
+  padding: 0 4px;
+  &:hover {
+    background-color: #78b100;
+    color: red;
+  }
+}
