@@ -1,0 +1,577 @@
+      new_employee_session GET    /employees/sign_in(.:format)       devise/sessions#new
+          employee_session POST   /employees/sign_in(.:format)       devise/sessions#create
+  destroy_employee_session DELETE /employees/sign_out(.:format)      devise/sessions#destroy
+         employee_password POST   /employees/password(.:format)      devise/passwords#create
+     new_employee_password GET    /employees/password/new(.:format)  devise/passwords#new
+    edit_employee_password GET    /employees/password/edit(.:format) devise/passwords#edit
+                           PUT    /employees/password(.:format)      devise/passwords#update
+edit_employee_registration GET    /employees/edit(.:format)          devise/registrations#edit
+     employee_registration PUT    /employees(.:format)               devise/registrations#update
+          new_user_session GET    /users/sign_in(.:format)           TravelWebsite::sessions#new
+              user_session POST   /users/sign_in(.:format)           TravelWebsite::sessions#create
+      destroy_user_session DELETE /users/sign_out(.:format)          TravelWebsite::sessions#destroy
+             user_password POST   /users/password(.:format)          TravelWebsite::passwords#create
+         new_user_password GET    /users/password/new(.:format)      TravelWebsite::passwords#new
+        edit_user_password GET    /users/password/edit(.:format)     TravelWebsite::passwords#edit
+                           PUT    /users/password(.:format)          TravelWebsite::passwords#update
+  cancel_user_registration GET    /users/cancel(.:format)            devise/registrations#cancel
+         user_registration POST   /users(.:format)                   devise/registrations#create
+     new_user_registration GET    /users/sign_up(.:format)           devise/registrations#new
+    edit_user_registration GET    /users/edit(.:format)              devise/registrations#edit
+                           PUT    /users(.:format)                   devise/registrations#update
+                           DELETE /users(.:format)                   devise/registrations#destroy
+            travel_website        /                                  TravelWebsite::Engine
+              travel_admin        /omeiadmin                         TravelAdmin::Engine
+                 omeiadmin        /omeiadmin(.:format)               travel_admin/home#index
+
+Routes for TravelWebsite::Engine:
+                root        /                                    travel_website/home#index
+                            /home(/:action)(.:format)            travel_website/home#:action
+             account POST   /account(.:format)                   travel_website/accounts#create
+         new_account GET    /account/new(.:format)               travel_website/accounts#new
+        edit_account GET    /account/edit(.:format)              travel_website/accounts#edit
+                     GET    /account(.:format)                   travel_website/accounts#show
+                     PUT    /account(.:format)                   travel_website/accounts#update
+                     DELETE /account(.:format)                   travel_website/accounts#destroy
+           myaccount POST   /myaccount(.:format)                 travel_website/myaccounts#create
+       new_myaccount GET    /myaccount/new(.:format)             travel_website/myaccounts#new
+      edit_myaccount GET    /myaccount/edit(.:format)            travel_website/myaccounts#edit
+                     GET    /myaccount(.:format)                 travel_website/myaccounts#show
+                     PUT    /myaccount(.:format)                 travel_website/myaccounts#update
+                     DELETE /myaccount(.:format)                 travel_website/myaccounts#destroy
+          telephones GET    /telephones(.:format)                travel_website/telephones#index
+                     POST   /telephones(.:format)                travel_website/telephones#create
+       new_telephone GET    /telephones/new(.:format)            travel_website/telephones#new
+      edit_telephone GET    /telephones/:id/edit(.:format)       travel_website/telephones#edit
+           telephone GET    /telephones/:id(.:format)            travel_website/telephones#show
+                     PUT    /telephones/:id(.:format)            travel_website/telephones#update
+                     DELETE /telephones/:id(.:format)            travel_website/telephones#destroy
+              emails GET    /emails(.:format)                    travel_website/emails#index
+                     POST   /emails(.:format)                    travel_website/emails#create
+           new_email GET    /emails/new(.:format)                travel_website/emails#new
+          edit_email GET    /emails/:id/edit(.:format)           travel_website/emails#edit
+               email GET    /emails/:id(.:format)                travel_website/emails#show
+                     PUT    /emails/:id(.:format)                travel_website/emails#update
+                     DELETE /emails/:id(.:format)                travel_website/emails#destroy
+           addresses GET    /addresses(.:format)                 travel_website/addresses#index
+                     POST   /addresses(.:format)                 travel_website/addresses#create
+         new_address GET    /addresses/new(.:format)             travel_website/addresses#new
+        edit_address GET    /addresses/:id/edit(.:format)        travel_website/addresses#edit
+             address GET    /addresses/:id(.:format)             travel_website/addresses#show
+                     PUT    /addresses/:id(.:format)             travel_website/addresses#update
+                     DELETE /addresses/:id(.:format)             travel_website/addresses#destroy
+        destinations GET    /destinations(.:format)              travel_website/destinations#index
+                     POST   /destinations(.:format)              travel_website/destinations#create
+     new_destination GET    /destinations/new(.:format)          travel_website/destinations#new
+    edit_destination GET    /destinations/:id/edit(.:format)     travel_website/destinations#edit
+         destination GET    /destinations/:id(.:format)          travel_website/destinations#show
+                     PUT    /destinations/:id(.:format)          travel_website/destinations#update
+                     DELETE /destinations/:id(.:format)          travel_website/destinations#destroy
+               pages GET    /pages(.:format)                     travel_website/pages#index
+                     POST   /pages(.:format)                     travel_website/pages#create
+            new_page GET    /pages/new(.:format)                 travel_website/pages#new
+           edit_page GET    /pages/:id/edit(.:format)            travel_website/pages#edit
+                page GET    /pages/:id(.:format)                 travel_website/pages#show
+                     PUT    /pages/:id(.:format)                 travel_website/pages#update
+                     DELETE /pages/:id(.:format)                 travel_website/pages#destroy
+         tour_orders GET    /tour_orders(.:format)               travel_website/tour_orders#index
+                     POST   /tour_orders(.:format)               travel_website/tour_orders#create
+      new_tour_order GET    /tour_orders/new(.:format)           travel_website/tour_orders#new
+     edit_tour_order GET    /tour_orders/:id/edit(.:format)      travel_website/tour_orders#edit
+          tour_order GET    /tour_orders/:id(.:format)           travel_website/tour_orders#show
+                     PUT    /tour_orders/:id(.:format)           travel_website/tour_orders#update
+                     DELETE /tour_orders/:id(.:format)           travel_website/tour_orders#destroy
+          order_tour GET    /tours/:id/order(.:format)           travel_website/tours#order
+                     POST   /tours/:id/order(.:format)           travel_website/tours#order
+                     GET    /tours/:tour_id/order(.:format)      travel_website/orders#new
+                     POST   /tours/:tour_id/order(.:format)      travel_website/orders#edit
+         tour_prices        /tours/:tour_id/prices(.:format)     travel_website/orders#prices
+               tours GET    /tours(.:format)                     travel_website/tours#index
+                     POST   /tours(.:format)                     travel_website/tours#create
+            new_tour GET    /tours/new(.:format)                 travel_website/tours#new
+           edit_tour GET    /tours/:id/edit(.:format)            travel_website/tours#edit
+                tour GET    /tours/:id(.:format)                 travel_website/tours#show
+                     PUT    /tours/:id(.:format)                 travel_website/tours#update
+                     DELETE /tours/:id(.:format)                 travel_website/tours#destroy
+       payment_order GET    /orders/:id/payment(.:format)        travel_website/orders#payment
+              orders GET    /orders(.:format)                    travel_website/orders#index
+                     POST   /orders(.:format)                    travel_website/orders#create
+           new_order GET    /orders/new(.:format)                travel_website/orders#new
+          edit_order GET    /orders/:id/edit(.:format)           travel_website/orders#edit
+               order GET    /orders/:id(.:format)                travel_website/orders#show
+                     PUT    /orders/:id(.:format)                travel_website/orders#update
+                     DELETE /orders/:id(.:format)                travel_website/orders#destroy
+    pay_credit_cards GET    /pay_credit_cards(.:format)          travel_website/pay_credit_cards#index
+                     POST   /pay_credit_cards(.:format)          travel_website/pay_credit_cards#create
+ new_pay_credit_card GET    /pay_credit_cards/new(.:format)      travel_website/pay_credit_cards#new
+edit_pay_credit_card GET    /pay_credit_cards/:id/edit(.:format) travel_website/pay_credit_cards#edit
+     pay_credit_card GET    /pay_credit_cards/:id(.:format)      travel_website/pay_credit_cards#show
+                     PUT    /pay_credit_cards/:id(.:format)      travel_website/pay_credit_cards#update
+                     DELETE /pay_credit_cards/:id(.:format)      travel_website/pay_credit_cards#destroy
+          user_infos GET    /user_infos(.:format)                travel_website/user_infos#index
+                     POST   /user_infos(.:format)                travel_website/user_infos#create
+       new_user_info GET    /user_infos/new(.:format)            travel_website/user_infos#new
+      edit_user_info GET    /user_infos/:id/edit(.:format)       travel_website/user_infos#edit
+           user_info GET    /user_infos/:id(.:format)            travel_website/user_infos#show
+                     PUT    /user_infos/:id(.:format)            travel_website/user_infos#update
+                     DELETE /user_infos/:id(.:format)            travel_website/user_infos#destroy
+                            /barcode/:str(.:format)              travel_website/barcode#gen
+
+Routes for TravelAdmin::Engine:
+                   cover_destination_photo GET    /destinations/:destination_id/photos/:id/cover(.:format)                                          travel_admin/photos#cover
+                        destination_photos GET    /destinations/:destination_id/photos(.:format)                                                    travel_admin/photos#index
+                                           POST   /destinations/:destination_id/photos(.:format)                                                    travel_admin/photos#create
+                     new_destination_photo GET    /destinations/:destination_id/photos/new(.:format)                                                travel_admin/photos#new
+                    edit_destination_photo GET    /destinations/:destination_id/photos/:id/edit(.:format)                                           travel_admin/photos#edit
+                         destination_photo GET    /destinations/:destination_id/photos/:id(.:format)                                                travel_admin/photos#show
+                                           PUT    /destinations/:destination_id/photos/:id(.:format)                                                travel_admin/photos#update
+                                           DELETE /destinations/:destination_id/photos/:id(.:format)                                                travel_admin/photos#destroy
+                              destinations GET    /destinations(.:format)                                                                           travel_admin/destinations#index
+                                           POST   /destinations(.:format)                                                                           travel_admin/destinations#create
+                           new_destination GET    /destinations/new(.:format)                                                                       travel_admin/destinations#new
+                          edit_destination GET    /destinations/:id/edit(.:format)                                                                  travel_admin/destinations#edit
+                               destination GET    /destinations/:id(.:format)                                                                       travel_admin/destinations#show
+                                           PUT    /destinations/:id(.:format)                                                                       travel_admin/destinations#update
+                                           DELETE /destinations/:id(.:format)                                                                       travel_admin/destinations#destroy
+                               page_photos GET    /pages/:page_id/photos(.:format)                                                                  travel_admin/photos#index
+                                           POST   /pages/:page_id/photos(.:format)                                                                  travel_admin/photos#create
+                            new_page_photo GET    /pages/:page_id/photos/new(.:format)                                                              travel_admin/photos#new
+                           edit_page_photo GET    /pages/:page_id/photos/:id/edit(.:format)                                                         travel_admin/photos#edit
+                                page_photo GET    /pages/:page_id/photos/:id(.:format)                                                              travel_admin/photos#show
+                                           PUT    /pages/:page_id/photos/:id(.:format)                                                              travel_admin/photos#update
+                                           DELETE /pages/:page_id/photos/:id(.:format)                                                              travel_admin/photos#destroy
+                                     pages GET    /pages(.:format)                                                                                  travel_admin/pages#index
+                                           POST   /pages(.:format)                                                                                  travel_admin/pages#create
+                                  new_page GET    /pages/new(.:format)                                                                              travel_admin/pages#new
+                                 edit_page GET    /pages/:id/edit(.:format)                                                                         travel_admin/pages#edit
+                                      page GET    /pages/:id(.:format)                                                                              travel_admin/pages#show
+                                           PUT    /pages/:id(.:format)                                                                              travel_admin/pages#update
+                                           DELETE /pages/:id(.:format)                                                                              travel_admin/pages#destroy
+                           cover_bus_photo GET    /buses/:bus_id/photos/:id/cover(.:format)                                                         travel_admin/photos#cover
+                                bus_photos GET    /buses/:bus_id/photos(.:format)                                                                   travel_admin/photos#index
+                                           POST   /buses/:bus_id/photos(.:format)                                                                   travel_admin/photos#create
+                             new_bus_photo GET    /buses/:bus_id/photos/new(.:format)                                                               travel_admin/photos#new
+                            edit_bus_photo GET    /buses/:bus_id/photos/:id/edit(.:format)                                                          travel_admin/photos#edit
+                                 bus_photo GET    /buses/:bus_id/photos/:id(.:format)                                                               travel_admin/photos#show
+                                           PUT    /buses/:bus_id/photos/:id(.:format)                                                               travel_admin/photos#update
+                                           DELETE /buses/:bus_id/photos/:id(.:format)                                                               travel_admin/photos#destroy
+                    bus_bus_reserved_dates GET    /buses/:bus_id/bus_reserved_dates(.:format)                                                       travel_admin/bus_reserved_dates#index
+                                           POST   /buses/:bus_id/bus_reserved_dates(.:format)                                                       travel_admin/bus_reserved_dates#create
+                 new_bus_bus_reserved_date GET    /buses/:bus_id/bus_reserved_dates/new(.:format)                                                   travel_admin/bus_reserved_dates#new
+                edit_bus_bus_reserved_date GET    /buses/:bus_id/bus_reserved_dates/:id/edit(.:format)                                              travel_admin/bus_reserved_dates#edit
+                     bus_bus_reserved_date GET    /buses/:bus_id/bus_reserved_dates/:id(.:format)                                                   travel_admin/bus_reserved_dates#show
+                                           PUT    /buses/:bus_id/bus_reserved_dates/:id(.:format)                                                   travel_admin/bus_reserved_dates#update
+                                           DELETE /buses/:bus_id/bus_reserved_dates/:id(.:format)                                                   travel_admin/bus_reserved_dates#destroy
+                                 shift_bus GET    /buses/:id/shift(.:format)                                                                        travel_admin/buses#shift
+                              shifts_buses GET    /buses/shifts(.:format)                                                                           travel_admin/buses#shifts
+                                     buses GET    /buses(.:format)                                                                                  travel_admin/buses#index
+                                           POST   /buses(.:format)                                                                                  travel_admin/buses#create
+                                   new_bus GET    /buses/new(.:format)                                                                              travel_admin/buses#new
+                                  edit_bus GET    /buses/:id/edit(.:format)                                                                         travel_admin/buses#edit
+                                       bus GET    /buses/:id(.:format)                                                                              travel_admin/buses#show
+                                           PUT    /buses/:id(.:format)                                                                              travel_admin/buses#update
+                                           DELETE /buses/:id(.:format)                                                                              travel_admin/buses#destroy
+                                tour_spots GET    /tours/:tour_id/spots(.:format)                                                                   travel_admin/tours/spots#index
+                                           POST   /tours/:tour_id/spots(.:format)                                                                   travel_admin/tours/spots#create
+                             new_tour_spot GET    /tours/:tour_id/spots/new(.:format)                                                               travel_admin/tours/spots#new
+                            edit_tour_spot GET    /tours/:tour_id/spots/:id/edit(.:format)                                                          travel_admin/tours/spots#edit
+                                 tour_spot GET    /tours/:tour_id/spots/:id(.:format)                                                               travel_admin/tours/spots#show
+                                           PUT    /tours/:tour_id/spots/:id(.:format)                                                               travel_admin/tours/spots#update
+                                           DELETE /tours/:tour_id/spots/:id(.:format)                                                               travel_admin/tours/spots#destroy
+                              search_tours GET    /tours/search(.:format)                                                                           travel_admin/tours#search
+                            generate_tours GET    /tours/generate(.:format)                                                                         travel_admin/tours#generate
+                                  gen_tour GET    /tours/:id/gen(.:format)                                                                          travel_admin/tours#gen
+                            tour_schedules GET    /tours/:tour_id/schedules(.:format)                                                               travel_admin/schedules#index
+                                           POST   /tours/:tour_id/schedules(.:format)                                                               travel_admin/schedules#create
+                         new_tour_schedule GET    /tours/:tour_id/schedules/new(.:format)                                                           travel_admin/schedules#new
+                        edit_tour_schedule GET    /tours/:tour_id/schedules/:id/edit(.:format)                                                      travel_admin/schedules#edit
+                             tour_schedule GET    /tours/:tour_id/schedules/:id(.:format)                                                           travel_admin/schedules#show
+                                           PUT    /tours/:tour_id/schedules/:id(.:format)                                                           travel_admin/schedules#update
+                                           DELETE /tours/:tour_id/schedules/:id(.:format)                                                           travel_admin/schedules#destroy
+                                     tours GET    /tours(.:format)                                                                                  travel_admin/tours#index
+                                           POST   /tours(.:format)                                                                                  travel_admin/tours#create
+                                  new_tour GET    /tours/new(.:format)                                                                              travel_admin/tours#new
+                                 edit_tour GET    /tours/:id/edit(.:format)                                                                         travel_admin/tours#edit
+                                      tour GET    /tours/:id(.:format)                                                                              travel_admin/tours#show
+                                           PUT    /tours/:id(.:format)                                                                              travel_admin/tours#update
+                                           DELETE /tours/:id(.:format)                                                                              travel_admin/tours#destroy
+                          select_schedules GET    /schedules/select(.:format)                                                                       travel_admin/schedules#select
+                          search_schedules GET    /schedules/search(.:format)                                                                       travel_admin/schedules#search
+                        generate_schedules GET    /schedules/generate(.:format)                                                                     travel_admin/schedules#generate
+                        selected_schedules PUT    /schedules/selected(.:format)                                                                     travel_admin/schedules#selected
+                           orders_schedule GET    /schedules/:id/orders(.:format)                                                                   travel_admin/schedules#orders
+    schedule_schedule_assignment_bus_seats GET    /schedules/:schedule_id/schedule_assignments/:schedule_assignment_id/bus_seats(.:format)          travel_admin/bus_seats#index
+                                           POST   /schedules/:schedule_id/schedule_assignments/:schedule_assignment_id/bus_seats(.:format)          travel_admin/bus_seats#create
+ new_schedule_schedule_assignment_bus_seat GET    /schedules/:schedule_id/schedule_assignments/:schedule_assignment_id/bus_seats/new(.:format)      travel_admin/bus_seats#new
+edit_schedule_schedule_assignment_bus_seat GET    /schedules/:schedule_id/schedule_assignments/:schedule_assignment_id/bus_seats/:id/edit(.:format) travel_admin/bus_seats#edit
+     schedule_schedule_assignment_bus_seat GET    /schedules/:schedule_id/schedule_assignments/:schedule_assignment_id/bus_seats/:id(.:format)      travel_admin/bus_seats#show
+                                           PUT    /schedules/:schedule_id/schedule_assignments/:schedule_assignment_id/bus_seats/:id(.:format)      travel_admin/bus_seats#update
+                                           DELETE /schedules/:schedule_id/schedule_assignments/:schedule_assignment_id/bus_seats/:id(.:format)      travel_admin/bus_seats#destroy
+        seats_schedule_schedule_assignment PUT    /schedules/:schedule_id/schedule_assignments/:id/seats(.:format)                                  travel_admin/schedule_assignments#seats
+             schedule_schedule_assignments GET    /schedules/:schedule_id/schedule_assignments(.:format)                                            travel_admin/schedule_assignments#index
+                                           POST   /schedules/:schedule_id/schedule_assignments(.:format)                                            travel_admin/schedule_assignments#create
+          new_schedule_schedule_assignment GET    /schedules/:schedule_id/schedule_assignments/new(.:format)                                        travel_admin/schedule_assignments#new
+         edit_schedule_schedule_assignment GET    /schedules/:schedule_id/schedule_assignments/:id/edit(.:format)                                   travel_admin/schedule_assignments#edit
+              schedule_schedule_assignment GET    /schedules/:schedule_id/schedule_assignments/:id(.:format)                                        travel_admin/schedule_assignments#show
+                                           PUT    /schedules/:schedule_id/schedule_assignments/:id(.:format)                                        travel_admin/schedule_assignments#update
+                                           DELETE /schedules/:schedule_id/schedule_assignments/:id(.:format)                                        travel_admin/schedule_assignments#destroy
+                                 schedules GET    /schedules(.:format)                                                                              travel_admin/schedules#index
+                                           POST   /schedules(.:format)                                                                              travel_admin/schedules#create
+                              new_schedule GET    /schedules/new(.:format)                                                                          travel_admin/schedules#new
+                             edit_schedule GET    /schedules/:id/edit(.:format)                                                                     travel_admin/schedules#edit
+                                  schedule GET    /schedules/:id(.:format)                                                                          travel_admin/schedules#show
+                                           PUT    /schedules/:id(.:format)                                                                          travel_admin/schedules#update
+                                           DELETE /schedules/:id(.:format)                                                                          travel_admin/schedules#destroy
+                         select_user_infos GET    /user_infos/select(.:format)                                                                      travel_admin/user_infos#select
+                           find_user_infos GET    /user_infos/find(.:format)                                                                        travel_admin/user_infos#find
+                         search_user_infos GET    /user_infos/search(.:format)                                                                      travel_admin/user_infos#search
+                        add_tel_user_infos GET    /user_infos/add_tel(.:format)                                                                     travel_admin/user_infos#add_tel
+                      add_email_user_infos GET    /user_infos/add_email(.:format)                                                                   travel_admin/user_infos#add_email
+                    add_address_user_infos GET    /user_infos/add_address(.:format)                                                                 travel_admin/user_infos#add_address
+                          brief_user_infos GET    /user_infos/brief(.:format)                                                                       travel_admin/user_infos#brief
+                     cover_user_info_photo GET    /user_infos/:user_info_id/photos/:id/cover(.:format)                                              travel_admin/photos#cover
+                          user_info_photos GET    /user_infos/:user_info_id/photos(.:format)                                                        travel_admin/photos#index
+                                           POST   /user_infos/:user_info_id/photos(.:format)                                                        travel_admin/photos#create
+                       new_user_info_photo GET    /user_infos/:user_info_id/photos/new(.:format)                                                    travel_admin/photos#new
+                      edit_user_info_photo GET    /user_infos/:user_info_id/photos/:id/edit(.:format)                                               travel_admin/photos#edit
+                           user_info_photo GET    /user_infos/:user_info_id/photos/:id(.:format)                                                    travel_admin/photos#show
+                                           PUT    /user_infos/:user_info_id/photos/:id(.:format)                                                    travel_admin/photos#update
+                                           DELETE /user_infos/:user_info_id/photos/:id(.:format)                                                    travel_admin/photos#destroy
+                                user_infos GET    /user_infos(.:format)                                                                             travel_admin/user_infos#index
+                                           POST   /user_infos(.:format)                                                                             travel_admin/user_infos#create
+                             new_user_info GET    /user_infos/new(.:format)                                                                         travel_admin/user_infos#new
+                            edit_user_info GET    /user_infos/:id/edit(.:format)                                                                    travel_admin/user_infos#edit
+                                 user_info GET    /user_infos/:id(.:format)                                                                         travel_admin/user_infos#show
+                                           PUT    /user_infos/:id(.:format)                                                                         travel_admin/user_infos#update
+                                           DELETE /user_infos/:id(.:format)                                                                         travel_admin/user_infos#destroy
+                                    emails GET    /emails(.:format)                                                                                 travel_admin/emails#index
+                                           POST   /emails(.:format)                                                                                 travel_admin/emails#create
+                                 new_email GET    /emails/new(.:format)                                                                             travel_admin/emails#new
+                                edit_email GET    /emails/:id/edit(.:format)                                                                        travel_admin/emails#edit
+                                     email GET    /emails/:id(.:format)                                                                             travel_admin/emails#show
+                                           PUT    /emails/:id(.:format)                                                                             travel_admin/emails#update
+                                           DELETE /emails/:id(.:format)                                                                             travel_admin/emails#destroy
+                                telephones GET    /telephones(.:format)                                                                             travel_admin/telephones#index
+                                           POST   /telephones(.:format)                                                                             travel_admin/telephones#create
+                             new_telephone GET    /telephones/new(.:format)                                                                         travel_admin/telephones#new
+                            edit_telephone GET    /telephones/:id/edit(.:format)                                                                    travel_admin/telephones#edit
+                                 telephone GET    /telephones/:id(.:format)                                                                         travel_admin/telephones#show
+                                           PUT    /telephones/:id(.:format)                                                                         travel_admin/telephones#update
+                                           DELETE /telephones/:id(.:format)                                                                         travel_admin/telephones#destroy
+                                 addresses GET    /addresses(.:format)                                                                              travel_admin/addresses#index
+                                           POST   /addresses(.:format)                                                                              travel_admin/addresses#create
+                               new_address GET    /addresses/new(.:format)                                                                          travel_admin/addresses#new
+                              edit_address GET    /addresses/:id/edit(.:format)                                                                     travel_admin/addresses#edit
+                                   address GET    /addresses/:id(.:format)                                                                          travel_admin/addresses#show
+                                           PUT    /addresses/:id(.:format)                                                                          travel_admin/addresses#update
+                                           DELETE /addresses/:id(.:format)                                                                          travel_admin/addresses#destroy
+                           add_room_orders GET    /orders/add_room(.:format)                                                                        travel_admin/orders#add_room
+                             order_remarks GET    /orders/:order_id/remarks(.:format)                                                               travel_admin/remarks#index
+                                           POST   /orders/:order_id/remarks(.:format)                                                               travel_admin/remarks#create
+                          new_order_remark GET    /orders/:order_id/remarks/new(.:format)                                                           travel_admin/remarks#new
+                         edit_order_remark GET    /orders/:order_id/remarks/:id/edit(.:format)                                                      travel_admin/remarks#edit
+                              order_remark GET    /orders/:order_id/remarks/:id(.:format)                                                           travel_admin/remarks#show
+                                           PUT    /orders/:order_id/remarks/:id(.:format)                                                           travel_admin/remarks#update
+                                           DELETE /orders/:order_id/remarks/:id(.:format)                                                           travel_admin/remarks#destroy
+                          order_pay_cashes GET    /orders/:order_id/pay_cashes(.:format)                                                            travel_admin/pay_cashes#index
+                                           POST   /orders/:order_id/pay_cashes(.:format)                                                            travel_admin/pay_cashes#create
+                        new_order_pay_cash GET    /orders/:order_id/pay_cashes/new(.:format)                                                        travel_admin/pay_cashes#new
+                       edit_order_pay_cash GET    /orders/:order_id/pay_cashes/:id/edit(.:format)                                                   travel_admin/pay_cashes#edit
+                            order_pay_cash GET    /orders/:order_id/pay_cashes/:id(.:format)                                                        travel_admin/pay_cashes#show
+                                           PUT    /orders/:order_id/pay_cashes/:id(.:format)                                                        travel_admin/pay_cashes#update
+                                           DELETE /orders/:order_id/pay_cashes/:id(.:format)                                                        travel_admin/pay_cashes#destroy
+                          order_pay_checks GET    /orders/:order_id/pay_checks(.:format)                                                            travel_admin/pay_checks#index
+                                           POST   /orders/:order_id/pay_checks(.:format)                                                            travel_admin/pay_checks#create
+                       new_order_pay_check GET    /orders/:order_id/pay_checks/new(.:format)                                                        travel_admin/pay_checks#new
+                      edit_order_pay_check GET    /orders/:order_id/pay_checks/:id/edit(.:format)                                                   travel_admin/pay_checks#edit
+                           order_pay_check GET    /orders/:order_id/pay_checks/:id(.:format)                                                        travel_admin/pay_checks#show
+                                           PUT    /orders/:order_id/pay_checks/:id(.:format)                                                        travel_admin/pay_checks#update
+                                           DELETE /orders/:order_id/pay_checks/:id(.:format)                                                        travel_admin/pay_checks#destroy
+                       order_pay_companies GET    /orders/:order_id/pay_companies(.:format)                                                         travel_admin/pay_companies#index
+                                           POST   /orders/:order_id/pay_companies(.:format)                                                         travel_admin/pay_companies#create
+                     new_order_pay_company GET    /orders/:order_id/pay_companies/new(.:format)                                                     travel_admin/pay_companies#new
+                    edit_order_pay_company GET    /orders/:order_id/pay_companies/:id/edit(.:format)                                                travel_admin/pay_companies#edit
+                         order_pay_company GET    /orders/:order_id/pay_companies/:id(.:format)                                                     travel_admin/pay_companies#show
+                                           PUT    /orders/:order_id/pay_companies/:id(.:format)                                                     travel_admin/pay_companies#update
+                                           DELETE /orders/:order_id/pay_companies/:id(.:format)                                                     travel_admin/pay_companies#destroy
+                        order_pay_vouchers GET    /orders/:order_id/pay_vouchers(.:format)                                                          travel_admin/pay_vouchers#index
+                                           POST   /orders/:order_id/pay_vouchers(.:format)                                                          travel_admin/pay_vouchers#create
+                     new_order_pay_voucher GET    /orders/:order_id/pay_vouchers/new(.:format)                                                      travel_admin/pay_vouchers#new
+                    edit_order_pay_voucher GET    /orders/:order_id/pay_vouchers/:id/edit(.:format)                                                 travel_admin/pay_vouchers#edit
+                         order_pay_voucher GET    /orders/:order_id/pay_vouchers/:id(.:format)                                                      travel_admin/pay_vouchers#show
+                                           PUT    /orders/:order_id/pay_vouchers/:id(.:format)                                                      travel_admin/pay_vouchers#update
+                                           DELETE /orders/:order_id/pay_vouchers/:id(.:format)                                                      travel_admin/pay_vouchers#destroy
+                    order_pay_credit_cards GET    /orders/:order_id/pay_credit_cards(.:format)                                                      travel_admin/pay_credit_cards#index
+                                           POST   /orders/:order_id/pay_credit_cards(.:format)                                                      travel_admin/pay_credit_cards#create
+                 new_order_pay_credit_card GET    /orders/:order_id/pay_credit_cards/new(.:format)                                                  travel_admin/pay_credit_cards#new
+                edit_order_pay_credit_card GET    /orders/:order_id/pay_credit_cards/:id/edit(.:format)                                             travel_admin/pay_credit_cards#edit
+                     order_pay_credit_card GET    /orders/:order_id/pay_credit_cards/:id(.:format)                                                  travel_admin/pay_credit_cards#show
+                                           PUT    /orders/:order_id/pay_credit_cards/:id(.:format)                                                  travel_admin/pay_credit_cards#update
+                                           DELETE /orders/:order_id/pay_credit_cards/:id(.:format)                                                  travel_admin/pay_credit_cards#destroy
+                       order_refund_cashes GET    /orders/:order_id/refund_cashes(.:format)                                                         travel_admin/refund_cashes#index
+                                           POST   /orders/:order_id/refund_cashes(.:format)                                                         travel_admin/refund_cashes#create
+                     new_order_refund_cash GET    /orders/:order_id/refund_cashes/new(.:format)                                                     travel_admin/refund_cashes#new
+                    edit_order_refund_cash GET    /orders/:order_id/refund_cashes/:id/edit(.:format)                                                travel_admin/refund_cashes#edit
+                         order_refund_cash GET    /orders/:order_id/refund_cashes/:id(.:format)                                                     travel_admin/refund_cashes#show
+                                           PUT    /orders/:order_id/refund_cashes/:id(.:format)                                                     travel_admin/refund_cashes#update
+                                           DELETE /orders/:order_id/refund_cashes/:id(.:format)                                                     travel_admin/refund_cashes#destroy
+                                    orders GET    /orders(.:format)                                                                                 travel_admin/orders#index
+                                           POST   /orders(.:format)                                                                                 travel_admin/orders#create
+                                 new_order GET    /orders/new(.:format)                                                                             travel_admin/orders#new
+                                edit_order GET    /orders/:id/edit(.:format)                                                                        travel_admin/orders#edit
+                                     order GET    /orders/:id(.:format)                                                                             travel_admin/orders#show
+                                           PUT    /orders/:id(.:format)                                                                             travel_admin/orders#update
+                                           DELETE /orders/:id(.:format)                                                                             travel_admin/orders#destroy
+                          pay_credit_cards GET    /pay_credit_cards(.:format)                                                                       travel_admin/pay_credit_cards#index
+                                           POST   /pay_credit_cards(.:format)                                                                       travel_admin/pay_credit_cards#create
+                       new_pay_credit_card GET    /pay_credit_cards/new(.:format)                                                                   travel_admin/pay_credit_cards#new
+                      edit_pay_credit_card GET    /pay_credit_cards/:id/edit(.:format)                                                              travel_admin/pay_credit_cards#edit
+                           pay_credit_card GET    /pay_credit_cards/:id(.:format)                                                                   travel_admin/pay_credit_cards#show
+                                           PUT    /pay_credit_cards/:id(.:format)                                                                   travel_admin/pay_credit_cards#update
+                                           DELETE /pay_credit_cards/:id(.:format)                                                                   travel_admin/pay_credit_cards#destroy
+                                pay_checks GET    /pay_checks(.:format)                                                                             travel_admin/pay_checks#index
+                                           POST   /pay_checks(.:format)                                                                             travel_admin/pay_checks#create
+                             new_pay_check GET    /pay_checks/new(.:format)                                                                         travel_admin/pay_checks#new
+                            edit_pay_check GET    /pay_checks/:id/edit(.:format)                                                                    travel_admin/pay_checks#edit
+                                 pay_check GET    /pay_checks/:id(.:format)                                                                         travel_admin/pay_checks#show
+                                           PUT    /pay_checks/:id(.:format)                                                                         travel_admin/pay_checks#update
+                                           DELETE /pay_checks/:id(.:format)                                                                         travel_admin/pay_checks#destroy
+                                      emps GET    /emps(.:format)                                                                                   travel_admin/emps#index
+                                           POST   /emps(.:format)                                                                                   travel_admin/emps#create
+                                   new_emp GET    /emps/new(.:format)                                                                               travel_admin/emps#new
+                                  edit_emp GET    /emps/:id/edit(.:format)                                                                          travel_admin/emps#edit
+                                       emp GET    /emps/:id(.:format)                                                                               travel_admin/emps#show
+                                           PUT    /emps/:id(.:format)                                                                               travel_admin/emps#update
+                                           DELETE /emps/:id(.:format)                                                                               travel_admin/emps#destroy
+                 cover_employee_info_photo GET    /employee_infos/:employee_info_id/photos/:id/cover(.:format)                                      travel_admin/photos#cover
+                      employee_info_photos GET    /employee_infos/:employee_info_id/photos(.:format)                                                travel_admin/photos#index
+                                           POST   /employee_infos/:employee_info_id/photos(.:format)                                                travel_admin/photos#create
+                   new_employee_info_photo GET    /employee_infos/:employee_info_id/photos/new(.:format)                                            travel_admin/photos#new
+                  edit_employee_info_photo GET    /employee_infos/:employee_info_id/photos/:id/edit(.:format)                                       travel_admin/photos#edit
+                       employee_info_photo GET    /employee_infos/:employee_info_id/photos/:id(.:format)                                            travel_admin/photos#show
+                                           PUT    /employee_infos/:employee_info_id/photos/:id(.:format)                                            travel_admin/photos#update
+                                           DELETE /employee_infos/:employee_info_id/photos/:id(.:format)                                            travel_admin/photos#destroy
+                    employee_info_accounts GET    /employee_infos/:employee_info_id/accounts(.:format)                                              travel_admin/accounts#index
+                                           POST   /employee_infos/:employee_info_id/accounts(.:format)                                              travel_admin/accounts#create
+                 new_employee_info_account GET    /employee_infos/:employee_info_id/accounts/new(.:format)                                          travel_admin/accounts#new
+                edit_employee_info_account GET    /employee_infos/:employee_info_id/accounts/:id/edit(.:format)                                     travel_admin/accounts#edit
+                     employee_info_account GET    /employee_infos/:employee_info_id/accounts/:id(.:format)                                          travel_admin/accounts#show
+                                           PUT    /employee_infos/:employee_info_id/accounts/:id(.:format)                                          travel_admin/accounts#update
+                                           DELETE /employee_infos/:employee_info_id/accounts/:id(.:format)                                          travel_admin/accounts#destroy
+                       docs_employee_infos GET    /employee_infos/docs(.:format)                                                                    travel_admin/employee_infos#docs
+                     shifts_employee_infos GET    /employee_infos/shifts(.:format)                                                                  travel_admin/employee_infos#shifts
+                  test_email_employee_info GET    /employee_infos/:id/test_email(.:format)                                                          travel_admin/employee_infos#test_email
+                   edit_info_employee_info GET    /employee_infos/:id/edit_info(.:format)                                                           travel_admin/employee_infos#edit_info
+                            employee_infos GET    /employee_infos(.:format)                                                                         travel_admin/employee_infos#index
+                                           POST   /employee_infos(.:format)                                                                         travel_admin/employee_infos#create
+                         new_employee_info GET    /employee_infos/new(.:format)                                                                     travel_admin/employee_infos#new
+                        edit_employee_info GET    /employee_infos/:id/edit(.:format)                                                                travel_admin/employee_infos#edit
+                             employee_info GET    /employee_infos/:id(.:format)                                                                     travel_admin/employee_infos#show
+                                           PUT    /employee_infos/:id(.:format)                                                                     travel_admin/employee_infos#update
+                                           DELETE /employee_infos/:id(.:format)                                                                     travel_admin/employee_infos#destroy
+                     add_contact_companies GET    /companies/add_contact(.:format)                                                                  travel_admin/companies#add_contact
+                    search_agent_companies GET    /companies/search_agent(.:format)                                                                 travel_admin/companies#search_agent
+                       cover_company_photo GET    /companies/:company_id/photos/:id/cover(.:format)                                                 travel_admin/photos#cover
+                            company_photos GET    /companies/:company_id/photos(.:format)                                                           travel_admin/photos#index
+                                           POST   /companies/:company_id/photos(.:format)                                                           travel_admin/photos#create
+                         new_company_photo GET    /companies/:company_id/photos/new(.:format)                                                       travel_admin/photos#new
+                        edit_company_photo GET    /companies/:company_id/photos/:id/edit(.:format)                                                  travel_admin/photos#edit
+                             company_photo GET    /companies/:company_id/photos/:id(.:format)                                                       travel_admin/photos#show
+                                           PUT    /companies/:company_id/photos/:id(.:format)                                                       travel_admin/photos#update
+                                           DELETE /companies/:company_id/photos/:id(.:format)                                                       travel_admin/photos#destroy
+                          company_accounts GET    /companies/:company_id/accounts(.:format)                                                         travel_admin/accounts#index
+                                           POST   /companies/:company_id/accounts(.:format)                                                         travel_admin/accounts#create
+                       new_company_account GET    /companies/:company_id/accounts/new(.:format)                                                     travel_admin/accounts#new
+                      edit_company_account GET    /companies/:company_id/accounts/:id/edit(.:format)                                                travel_admin/accounts#edit
+                           company_account GET    /companies/:company_id/accounts/:id(.:format)                                                     travel_admin/accounts#show
+                                           PUT    /companies/:company_id/accounts/:id(.:format)                                                     travel_admin/accounts#update
+                                           DELETE /companies/:company_id/accounts/:id(.:format)                                                     travel_admin/accounts#destroy
+                      find_agent_companies GET    /companies/find_agent(.:format)                                                                   travel_admin/companies#find_agent
+                       new_invoice_company GET    /companies/:id/new_invoice(.:format)                                                              travel_admin/companies#new_invoice
+                                 companies GET    /companies(.:format)                                                                              travel_admin/companies#index
+                                           POST   /companies(.:format)                                                                              travel_admin/companies#create
+                               new_company GET    /companies/new(.:format)                                                                          travel_admin/companies#new
+                              edit_company GET    /companies/:id/edit(.:format)                                                                     travel_admin/companies#edit
+                                   company GET    /companies/:id(.:format)                                                                          travel_admin/companies#show
+                                           PUT    /companies/:id(.:format)                                                                          travel_admin/companies#update
+                                           DELETE /companies/:id(.:format)                                                                          travel_admin/companies#destroy
+                           refund_payments GET    /payments/refund(.:format)                                                                        travel_admin/payments#refund
+                                  payments GET    /payments(.:format)                                                                               travel_admin/payments#index
+                                           POST   /payments(.:format)                                                                               travel_admin/payments#create
+                               new_payment GET    /payments/new(.:format)                                                                           travel_admin/payments#new
+                              edit_payment GET    /payments/:id/edit(.:format)                                                                      travel_admin/payments#edit
+                                   payment GET    /payments/:id(.:format)                                                                           travel_admin/payments#show
+                                           PUT    /payments/:id(.:format)                                                                           travel_admin/payments#update
+                                           DELETE /payments/:id(.:format)                                                                           travel_admin/payments#destroy
+                                  vouchers GET    /vouchers(.:format)                                                                               travel_admin/vouchers#index
+                                           POST   /vouchers(.:format)                                                                               travel_admin/vouchers#create
+                               new_voucher GET    /vouchers/new(.:format)                                                                           travel_admin/vouchers#new
+                              edit_voucher GET    /vouchers/:id/edit(.:format)                                                                      travel_admin/vouchers#edit
+                                   voucher GET    /vouchers/:id(.:format)                                                                           travel_admin/vouchers#show
+                                           PUT    /vouchers/:id(.:format)                                                                           travel_admin/vouchers#update
+                                           DELETE /vouchers/:id(.:format)                                                                           travel_admin/vouchers#destroy
+                       company_receivables GET    /company_receivables(.:format)                                                                    travel_admin/company_receivables#index
+                                           POST   /company_receivables(.:format)                                                                    travel_admin/company_receivables#create
+                    new_company_receivable GET    /company_receivables/new(.:format)                                                                travel_admin/company_receivables#new
+                   edit_company_receivable GET    /company_receivables/:id/edit(.:format)                                                           travel_admin/company_receivables#edit
+                        company_receivable GET    /company_receivables/:id(.:format)                                                                travel_admin/company_receivables#show
+                                           PUT    /company_receivables/:id(.:format)                                                                travel_admin/company_receivables#update
+                                           DELETE /company_receivables/:id(.:format)                                                                travel_admin/company_receivables#destroy
+                                           GET    /accounts/company(.:format)                                                                       travel_admin/accounts#company
+                               pay_account GET    /accounts/:id/pay(.:format)                                                                       travel_admin/accounts#pay
+                                  accounts GET    /accounts(.:format)                                                                               travel_admin/accounts#index
+                                           POST   /accounts(.:format)                                                                               travel_admin/accounts#create
+                               new_account GET    /accounts/new(.:format)                                                                           travel_admin/accounts#new
+                              edit_account GET    /accounts/:id/edit(.:format)                                                                      travel_admin/accounts#edit
+                                   account GET    /accounts/:id(.:format)                                                                           travel_admin/accounts#show
+                                           PUT    /accounts/:id(.:format)                                                                           travel_admin/accounts#update
+                                           DELETE /accounts/:id(.:format)                                                                           travel_admin/accounts#destroy
+                                     bills GET    /bills(.:format)                                                                                  travel_admin/bills#index
+                                           POST   /bills(.:format)                                                                                  travel_admin/bills#create
+                                  new_bill GET    /bills/new(.:format)                                                                              travel_admin/bills#new
+                                 edit_bill GET    /bills/:id/edit(.:format)                                                                         travel_admin/bills#edit
+                                      bill GET    /bills/:id(.:format)                                                                              travel_admin/bills#show
+                                           PUT    /bills/:id(.:format)                                                                              travel_admin/bills#update
+                                           DELETE /bills/:id(.:format)                                                                              travel_admin/bills#destroy
+                                  invoices GET    /invoices(.:format)                                                                               travel_admin/invoices#index
+                                           POST   /invoices(.:format)                                                                               travel_admin/invoices#create
+                               new_invoice GET    /invoices/new(.:format)                                                                           travel_admin/invoices#new
+                              edit_invoice GET    /invoices/:id/edit(.:format)                                                                      travel_admin/invoices#edit
+                                   invoice GET    /invoices/:id(.:format)                                                                           travel_admin/invoices#show
+                                           PUT    /invoices/:id(.:format)                                                                           travel_admin/invoices#update
+                                           DELETE /invoices/:id(.:format)                                                                           travel_admin/invoices#destroy
+                                           GET    /telephones(.:format)                                                                             travel_admin/telephones#index
+                                           POST   /telephones(.:format)                                                                             travel_admin/telephones#create
+                                           GET    /telephones/new(.:format)                                                                         travel_admin/telephones#new
+                                           GET    /telephones/:id/edit(.:format)                                                                    travel_admin/telephones#edit
+                                           GET    /telephones/:id(.:format)                                                                         travel_admin/telephones#show
+                                           PUT    /telephones/:id(.:format)                                                                         travel_admin/telephones#update
+                                           DELETE /telephones/:id(.:format)                                                                         travel_admin/telephones#destroy
+                                           GET    /emails(.:format)                                                                                 travel_admin/emails#index
+                                           POST   /emails(.:format)                                                                                 travel_admin/emails#create
+                                           GET    /emails/new(.:format)                                                                             travel_admin/emails#new
+                                           GET    /emails/:id/edit(.:format)                                                                        travel_admin/emails#edit
+                                           GET    /emails/:id(.:format)                                                                             travel_admin/emails#show
+                                           PUT    /emails/:id(.:format)                                                                             travel_admin/emails#update
+                                           DELETE /emails/:id(.:format)                                                                             travel_admin/emails#destroy
+                                           GET    /addresses(.:format)                                                                              travel_admin/addresses#index
+                                           POST   /addresses(.:format)                                                                              travel_admin/addresses#create
+                                           GET    /addresses/new(.:format)                                                                          travel_admin/addresses#new
+                                           GET    /addresses/:id/edit(.:format)                                                                     travel_admin/addresses#edit
+                                           GET    /addresses/:id(.:format)                                                                          travel_admin/addresses#show
+                                           PUT    /addresses/:id(.:format)                                                                          travel_admin/addresses#update
+                                           DELETE /addresses/:id(.:format)                                                                          travel_admin/addresses#destroy
+                               input_types GET    /input_types(.:format)                                                                            travel_admin/input_types#index
+                                           POST   /input_types(.:format)                                                                            travel_admin/input_types#create
+                            new_input_type GET    /input_types/new(.:format)                                                                        travel_admin/input_types#new
+                           edit_input_type GET    /input_types/:id/edit(.:format)                                                                   travel_admin/input_types#edit
+                                input_type GET    /input_types/:id(.:format)                                                                        travel_admin/input_types#show
+                                           PUT    /input_types/:id(.:format)                                                                        travel_admin/input_types#update
+                                           DELETE /input_types/:id(.:format)                                                                        travel_admin/input_types#destroy
+                                tour_types GET    /tour_types(.:format)                                                                             travel_admin/tour_types#index
+                                           POST   /tour_types(.:format)                                                                             travel_admin/tour_types#create
+                             new_tour_type GET    /tour_types/new(.:format)                                                                         travel_admin/tour_types#new
+                            edit_tour_type GET    /tour_types/:id/edit(.:format)                                                                    travel_admin/tour_types#edit
+                                 tour_type GET    /tour_types/:id(.:format)                                                                         travel_admin/tour_types#show
+                                           PUT    /tour_types/:id(.:format)                                                                         travel_admin/tour_types#update
+                                           DELETE /tour_types/:id(.:format)                                                                         travel_admin/tour_types#destroy
+                                 positions GET    /positions(.:format)                                                                              travel_admin/positions#index
+                                           POST   /positions(.:format)                                                                              travel_admin/positions#create
+                              new_position GET    /positions/new(.:format)                                                                          travel_admin/positions#new
+                             edit_position GET    /positions/:id/edit(.:format)                                                                     travel_admin/positions#edit
+                                  position GET    /positions/:id(.:format)                                                                          travel_admin/positions#show
+                                           PUT    /positions/:id(.:format)                                                                          travel_admin/positions#update
+                                           DELETE /positions/:id(.:format)                                                                          travel_admin/positions#destroy
+                 schedule_assignment_costs GET    /schedule_assignment_costs(.:format)                                                              travel_admin/schedule_assignment_costs#index
+                                           POST   /schedule_assignment_costs(.:format)                                                              travel_admin/schedule_assignment_costs#create
+              new_schedule_assignment_cost GET    /schedule_assignment_costs/new(.:format)                                                          travel_admin/schedule_assignment_costs#new
+             edit_schedule_assignment_cost GET    /schedule_assignment_costs/:id/edit(.:format)                                                     travel_admin/schedule_assignment_costs#edit
+                  schedule_assignment_cost GET    /schedule_assignment_costs/:id(.:format)                                                          travel_admin/schedule_assignment_costs#show
+                                           PUT    /schedule_assignment_costs/:id(.:format)                                                          travel_admin/schedule_assignment_costs#update
+                                           DELETE /schedule_assignment_costs/:id(.:format)                                                          travel_admin/schedule_assignment_costs#destroy
+              schedule_assignment_balances GET    /schedule_assignment_balances(.:format)                                                           travel_admin/schedule_assignment_balances#index
+                                           POST   /schedule_assignment_balances(.:format)                                                           travel_admin/schedule_assignment_balances#create
+           new_schedule_assignment_balance GET    /schedule_assignment_balances/new(.:format)                                                       travel_admin/schedule_assignment_balances#new
+          edit_schedule_assignment_balance GET    /schedule_assignment_balances/:id/edit(.:format)                                                  travel_admin/schedule_assignment_balances#edit
+               schedule_assignment_balance GET    /schedule_assignment_balances/:id(.:format)                                                       travel_admin/schedule_assignment_balances#show
+                                           PUT    /schedule_assignment_balances/:id(.:format)                                                       travel_admin/schedule_assignment_balances#update
+                                           DELETE /schedule_assignment_balances/:id(.:format)                                                       travel_admin/schedule_assignment_balances#destroy
+                                      logs GET    /logs(.:format)                                                                                   travel_admin/logs#index
+                                           POST   /logs(.:format)                                                                                   travel_admin/logs#create
+                                   new_log GET    /logs/new(.:format)                                                                               travel_admin/logs#new
+                                  edit_log GET    /logs/:id/edit(.:format)                                                                          travel_admin/logs#edit
+                                       log GET    /logs/:id(.:format)                                                                               travel_admin/logs#show
+                                           PUT    /logs/:id(.:format)                                                                               travel_admin/logs#update
+                                           DELETE /logs/:id(.:format)                                                                               travel_admin/logs#destroy
+                                zone_todos GET    /todos/zone(.:format)                                                                             travel_admin/todos#zone
+                              todo_remarks POST   /todos/:todo_id/remarks(.:format)                                                                 travel_admin/remarks#create
+                          new_todo_remarks GET    /todos/:todo_id/remarks/new(.:format)                                                             travel_admin/remarks#new
+                         edit_todo_remarks GET    /todos/:todo_id/remarks/edit(.:format)                                                            travel_admin/remarks#edit
+                                           GET    /todos/:todo_id/remarks(.:format)                                                                 travel_admin/remarks#show
+                                           PUT    /todos/:todo_id/remarks(.:format)                                                                 travel_admin/remarks#update
+                                           DELETE /todos/:todo_id/remarks(.:format)                                                                 travel_admin/remarks#destroy
+                         add_employee_todo GET    /todos/:id/add_employee(.:format)                                                                 travel_admin/todos#add_employee
+                           add_worker_todo POST   /todos/:id/add_worker(.:format)                                                                   travel_admin/todos#add_worker
+                            rm_worker_todo DELETE /todos/:id/rm_worker(.:format)                                                                    travel_admin/todos#rm_worker
+                                     todos GET    /todos(.:format)                                                                                  travel_admin/todos#index
+                                           POST   /todos(.:format)                                                                                  travel_admin/todos#create
+                                  new_todo GET    /todos/new(.:format)                                                                              travel_admin/todos#new
+                                 edit_todo GET    /todos/:id/edit(.:format)                                                                         travel_admin/todos#edit
+                                      todo GET    /todos/:id(.:format)                                                                              travel_admin/todos#show
+                                           PUT    /todos/:id(.:format)                                                                              travel_admin/todos#update
+                                           DELETE /todos/:id(.:format)                                                                              travel_admin/todos#destroy
+                              zone_my_logs GET    /my_logs/zone(.:format)                                                                           travel_admin/my_logs#zone
+                                   my_logs GET    /my_logs(.:format)                                                                                travel_admin/my_logs#index
+                                           POST   /my_logs(.:format)                                                                                travel_admin/my_logs#create
+                                new_my_log GET    /my_logs/new(.:format)                                                                            travel_admin/my_logs#new
+                               edit_my_log GET    /my_logs/:id/edit(.:format)                                                                       travel_admin/my_logs#edit
+                                    my_log GET    /my_logs/:id(.:format)                                                                            travel_admin/my_logs#show
+                                           PUT    /my_logs/:id(.:format)                                                                            travel_admin/my_logs#update
+                                           DELETE /my_logs/:id(.:format)                                                                            travel_admin/my_logs#destroy
+                 reload_app_configurations GET    /app_configurations/reload(.:format)                                                              travel_admin/app_configurations#reload
+                        app_configurations GET    /app_configurations(.:format)                                                                     travel_admin/app_configurations#index
+                                           POST   /app_configurations(.:format)                                                                     travel_admin/app_configurations#create
+                     new_app_configuration GET    /app_configurations/new(.:format)                                                                 travel_admin/app_configurations#new
+                    edit_app_configuration GET    /app_configurations/:id/edit(.:format)                                                            travel_admin/app_configurations#edit
+                         app_configuration GET    /app_configurations/:id(.:format)                                                                 travel_admin/app_configurations#show
+                                           PUT    /app_configurations/:id(.:format)                                                                 travel_admin/app_configurations#update
+                                           DELETE /app_configurations/:id(.:format)                                                                 travel_admin/app_configurations#destroy
+                                   remarks GET    /remarks(.:format)                                                                                travel_admin/remarks#index
+                                           POST   /remarks(.:format)                                                                                travel_admin/remarks#create
+                                new_remark GET    /remarks/new(.:format)                                                                            travel_admin/remarks#new
+                               edit_remark GET    /remarks/:id/edit(.:format)                                                                       travel_admin/remarks#edit
+                                    remark GET    /remarks/:id(.:format)                                                                            travel_admin/remarks#show
+                                           PUT    /remarks/:id(.:format)                                                                            travel_admin/remarks#update
+                                           DELETE /remarks/:id(.:format)                                                                            travel_admin/remarks#destroy
+                               select_city GET    /cities/:id/select(.:format)                                                                      travel_admin/cities#select
+                           get_detail_city GET    /cities/:id/get_detail(.:format)                                                                  travel_admin/cities#get_detail
+                             search_cities GET    /cities/search(.:format)                                                                          travel_admin/cities#search
+                                    cities GET    /cities(.:format)                                                                                 travel_admin/cities#index
+                                           POST   /cities(.:format)                                                                                 travel_admin/cities#create
+                                  new_city GET    /cities/new(.:format)                                                                             travel_admin/cities#new
+                                 edit_city GET    /cities/:id/edit(.:format)                                                                        travel_admin/cities#edit
+                                      city GET    /cities/:id(.:format)                                                                             travel_admin/cities#show
+                                           PUT    /cities/:id(.:format)                                                                             travel_admin/cities#update
+                                           DELETE /cities/:id(.:format)                                                                             travel_admin/cities#destroy
+                                     auths GET    /auths(.:format)                                                                                  travel_admin/auths#index
+                                           POST   /auths(.:format)                                                                                  travel_admin/auths#create
+                                  new_auth GET    /auths/new(.:format)                                                                              travel_admin/auths#new
+                                 edit_auth GET    /auths/:id/edit(.:format)                                                                         travel_admin/auths#edit
+                                      auth GET    /auths/:id(.:format)                                                                              travel_admin/auths#show
+                                           PUT    /auths/:id(.:format)                                                                              travel_admin/auths#update
+                                           DELETE /auths/:id(.:format)                                                                              travel_admin/auths#destroy
+                                 employees GET    /employees(.:format)                                                                              travel_admin/employees#index
+                                           POST   /employees(.:format)                                                                              travel_admin/employees#create
+                              new_employee GET    /employees/new(.:format)                                                                          travel_admin/employees#new
+                             edit_employee GET    /employees/:id/edit(.:format)                                                                     travel_admin/employees#edit
+                                  employee GET    /employees/:id(.:format)                                                                          travel_admin/employees#show
+                                           PUT    /employees/:id(.:format)                                                                          travel_admin/employees#update
+                                           DELETE /employees/:id(.:format)                                                                          travel_admin/employees#destroy
+                                     posts GET    /posts(.:format)                                                                                  travel_admin/posts#index
+                                           POST   /posts(.:format)                                                                                  travel_admin/posts#create
+                                  new_post GET    /posts/new(.:format)                                                                              travel_admin/posts#new
+                                 edit_post GET    /posts/:id/edit(.:format)                                                                         travel_admin/posts#edit
+                                      post GET    /posts/:id(.:format)                                                                              travel_admin/posts#show
+                                           PUT    /posts/:id(.:format)                                                                              travel_admin/posts#update
+                                           DELETE /posts/:id(.:format)                                                                              travel_admin/posts#destroy
+                                                  /home(/:action)(.:format)                                                                         travel_admin/home#:action

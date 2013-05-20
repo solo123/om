@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130430130625) do
+ActiveRecord::Schema.define(:version => 20130520163802) do
 
   create_table "account_histories", :force => true do |t|
     t.string   "balance_object_type"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20130430130625) do
     t.integer  "priority",          :default => 0
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+    t.string   "state"
+    t.string   "country"
   end
 
   add_index "addresses", ["address1"], :name => "index_addresses_on_address1"

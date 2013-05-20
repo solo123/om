@@ -1,4 +1,13 @@
 == Update History
+* 2013-05-21
+. 修改seat table样式表，改正td不支持relative；
+. web order增加必须输入电话和地址；
+. look card增加显示order的详细信息；
+
+* 2013-05-14
+. 添加邮件模板和程序发送邮件；
+. 修改输入credit card prof code错误；
+
 * 2013-05-07
 . 修改新注册用户无法下单；
 . 取消顶部和旁边广告；
