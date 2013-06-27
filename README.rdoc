@@ -1,4 +1,14 @@
 == Update History
+
+. 30分钟不操作要求重新登录；
+
+* 2013-06-04
+. 新增employee和修改密码；
+. look card时显示用户信息（包括email）；
+. 修改部分schedules返回日期错误；
+. 网站下单CVV可输入4位；
+. 座位表把未安排订单放在前面；
+
 * 2013-05-21
 . 修改seat table样式表，改正td不支持relative；
 . web order增加必须输入电话和地址；

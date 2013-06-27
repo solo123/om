@@ -37,9 +37,15 @@ table.order-table{
 }
 
 .order{
-  .info-text {font-size: 90%; color: #555;
-    label {color: $ptn_4;}
+  .info-text {font-size: 0.8em; color: #555;
+    label {font-weight: bold;}
 }
   .info-data {color: $ptn_5;}
 }
 
+#room_table{
+  font-size: 0.8em;
+  border-collapse: collapse;
+  tbody td{border:solid 1px #aaa; padding: 4px; text-align: center;}
+  tfoot td{text-align:center;}
+}

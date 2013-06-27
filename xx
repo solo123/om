@@ -362,6 +362,8 @@ edit_schedule_schedule_assignment_bus_seat GET    /schedules/:schedule_id/schedu
                      shifts_employee_infos GET    /employee_infos/shifts(.:format)                                                                  travel_admin/employee_infos#shifts
                   test_email_employee_info GET    /employee_infos/:id/test_email(.:format)                                                          travel_admin/employee_infos#test_email
                    edit_info_employee_info GET    /employee_infos/:id/edit_info(.:format)                                                           travel_admin/employee_infos#edit_info
+                         psw_employee_info GET    /employee_infos/:id/psw(.:format)                                                                 travel_admin/employee_infos#psw
+                      setpsw_employee_info POST   /employee_infos/:id/setpsw(.:format)                                                              travel_admin/employee_infos#setpsw
                             employee_infos GET    /employee_infos(.:format)                                                                         travel_admin/employee_infos#index
                                            POST   /employee_infos(.:format)                                                                         travel_admin/employee_infos#create
                          new_employee_info GET    /employee_infos/new(.:format)                                                                     travel_admin/employee_infos#new
