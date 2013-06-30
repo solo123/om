@@ -1,6 +1,9 @@
 == Update History
 
 . 30分钟不操作要求重新登录；
+. 在DEBUG运行状态也可以切换中英文；
+. 中文Terms&conditions, about-us;
+
 
 * 2013-06-04
 . 新增employee和修改密码；
