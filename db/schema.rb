@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520163802) do
+ActiveRecord::Schema.define(:version => 20130520175104) do
 
   create_table "account_histories", :force => true do |t|
     t.string   "balance_object_type"
