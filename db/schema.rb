@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520175104) do
+ActiveRecord::Schema.define(:version => 20130704010700) do
 
   create_table "account_histories", :force => true do |t|
     t.string   "balance_object_type"
@@ -646,6 +646,8 @@ ActiveRecord::Schema.define(:version => 20130520175104) do
     t.integer  "status",         :default => 0
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.string   "payment_name"
+    t.string   "payment_tel"
   end
 
   add_index "user_infos", ["full_name"], :name => "index_user_infos_on_full_name"
