@@ -9,5 +9,5 @@ Omei::Application.routes.draw do
 
   mount TravelWebsite::Engine, :at => '/'
   mount TravelAdmin::Engine, :at => 'omeiadmin'
-  #match '/omeiadmin', :to => 'travel_admin/home#index', :as => :omeiadmin
+  get :omeiadmin, :to => 'travel_admin/home#index'
 end
