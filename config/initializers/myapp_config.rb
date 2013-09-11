@@ -2,7 +2,6 @@ require "#{Rails.root}/lib/core/all_changes.rb"
 #require 'i18n/missing_translations'
 #Omei::Application.config.app_middleware.use(I18n::MissingTranslations) if Rails.env.development?
 #
-
 module WillPaginate
   module ActionView
     def will_paginate(collection = nil, options = {})
@@ -14,7 +13,7 @@ module WillPaginate
       protected
       
       def html_container(html)
-        tag :div, tag(:ul, html), container_attributes
+        tag :ul, html, container_attributes
       end
 
       def page_number(page)
@@ -28,6 +27,7 @@ module WillPaginate
   end
 end
 
-WillPaginate::ViewHelpers.pagination_options[:class] = 'pagination pagination-mini'
+WillPaginate::ViewHelpers.pagination_options[:class] = 'pagination'
 WillPaginate::ViewHelpers.pagination_options[:previous_label] = '&laquo;'
 WillPaginate::ViewHelpers.pagination_options[:next_label] = '&raquo;'
+
