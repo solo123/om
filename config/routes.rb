@@ -10,7 +10,7 @@ Omei::Application.routes.draw do
   #devise_for :users, :controllers => {:passwords => 'TravelWebsite::passwords', :sessions => 'TravelWebsite::sessions123'}
   devise_for :users
 
-  mount TravelWebsite::Engine, :at => '/web'
+  mount TravelWebsite::Engine, :at => '/'
   mount TravelAdmin::Engine, :at => 'omeiadmin'
   get :omeiadmin, :to => 'travel_admin/home#index'
 

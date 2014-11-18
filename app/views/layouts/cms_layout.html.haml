@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title= title
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+
+    = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"
+    = javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+    = stylesheet_link_tag    "/css/jqueryui/ui", '/css/my_icons/gicons2', :media => "all"
+
+    = csrf_meta_tags
+    = yield :head
+  %body
+    = yield
