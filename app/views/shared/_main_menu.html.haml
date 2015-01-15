@@ -1,0 +1,66 @@
+%nav.navbar.navbar-default{:role => "navigation"}
+  .container
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a{:href => "/"}
+        %img{height: "30", src: "/assets/logo.png", style: "margin-top: 40px;"}
+    / Collect the nav links, forms, and other content for toggling
+    .collapse.navbar-collapse.navbar-ex1-collapse
+      %ul.nav.navbar-nav
+        %li.dropdown.active
+          %a{:href => "/"} Home
+        %li.dropdown
+          %a{:href => "/dests"} Destinations
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Tours
+          %ul.dropdown-menu
+            %li
+              %a{:href => "/tours"} Bus Tour
+            %li
+              %a{:href => "team.html"} Courses
+            %li
+              %a{:href => "services.html"} Services
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Portfolio
+          %ul.dropdown-menu
+            %li
+              %a{:href => "portfolio-2.html"} Portfolio 2 Columns
+            %li
+              %a{:href => "portfolio-3.html"} Portfolio 3 Columns
+            %li
+              %a{:href => "portfolio-4.html"} Portfolio 4 Columns
+            %li
+              %a{:href => "portfolio-item-1.html"} Portfolio Item 1
+            %li
+              %a{:href => "portfolio-item-2.html"} Portfolio Item 2
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Blog
+          %ul.dropdown-menu
+            %li
+              %a{:href => "blog-1.html"} Blog Layout 1
+            %li
+              %a{:href => "blog-2.html"} Blog Layout 2
+            %li
+              %a{:href => "blog-3.html"} Blog Layout 3
+            %li
+              %a{:href => "blog-4.html"} Blog Layout 4
+            %li
+              %a{:href => "post-1.html"} Post Layout 1
+            %li
+              %a{:href => "post-2.html"} Post Layout 2
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Contact
+          %ul.dropdown-menu
+            %li
+              %a{:href => "contact-1.html"} Contact 1
+            %li
+              %a{:href => "contact-2.html"} Contact 2
+      / /.nav
+    / /.navbar-collapse
+  / /.container
+/ /.navbar

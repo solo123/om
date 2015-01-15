@@ -1,0 +1,30 @@
+>Data
+Destinations|destination|destinations_path
+Tours|tours|tours_path
+Schedules|schedules|schedules_path
+Vehicles|buses|buses_path
+Pages|pages|pages_path
+Companies|companies|companies_path
+Employees|employees|employee_infos_path
+>Orders
+Orders|orders|orders_path
+Credit Cards|credit_cards|pay_credit_cards_path
+Users|user_infos|user_infos_path
+Emails|emails|emails_path
+Telephones|telephones|telephones_path
+Addresses|addresses|addresses_path
+>Accounts
+Accounts|accounts|accounts_path
+Payments|payments|payments_path
+Vouchers|vouchers|vouchers_path
+Company Receivables|company_receivables|company_receivables_path
+>Reports
+Vehicles Shifts|shifts_buses|shifts_buses_path
+Employees Shifts|shifts_employee|shifts_employee_infos_path
+>Manage
+Employees|docs_employee_infos|docs_employee_infos_path
+Input Types|input_types|input_types_path
+Configurations|configurations|app_configurations_path
+>Admin|is_admin
+Reset schedules data|abc|"admin/reset_schedules"
+Auto fill user payment name|abc|"admin/autofill_pname"
