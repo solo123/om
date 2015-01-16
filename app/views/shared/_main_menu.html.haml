@@ -12,54 +12,27 @@
     / Collect the nav links, forms, and other content for toggling
     .collapse.navbar-collapse.navbar-ex1-collapse
       %ul.nav.navbar-nav
-        %li.dropdown.active
+        %li{class: "dropdown #{'active' if request.path == '/'}"}
           %a{:href => "/"} Home
-        %li.dropdown
-          %a{:href => "/dests"} Destinations
-        %li.dropdown
+        %li{class: "dropdown #{'active' if request.path.start_with?('/destinations')}"}
+          %a{:href => "/destinations"} Destinations
+        %li{class: "dropdown #{'active' if request.path.start_with?('/tours')}"}
           %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Tours
           %ul.dropdown-menu
             %li
               %a{:href => "/tours"} Bus Tour
             %li
-              %a{:href => "team.html"} Courses
+              %a{:href => "/packages"} Packages
             %li
-              %a{:href => "services.html"} Services
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Portfolio
-          %ul.dropdown-menu
-            %li
-              %a{:href => "portfolio-2.html"} Portfolio 2 Columns
-            %li
-              %a{:href => "portfolio-3.html"} Portfolio 3 Columns
-            %li
-              %a{:href => "portfolio-4.html"} Portfolio 4 Columns
-            %li
-              %a{:href => "portfolio-item-1.html"} Portfolio Item 1
-            %li
-              %a{:href => "portfolio-item-2.html"} Portfolio Item 2
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Blog
-          %ul.dropdown-menu
-            %li
-              %a{:href => "blog-1.html"} Blog Layout 1
-            %li
-              %a{:href => "blog-2.html"} Blog Layout 2
-            %li
-              %a{:href => "blog-3.html"} Blog Layout 3
-            %li
-              %a{:href => "blog-4.html"} Blog Layout 4
-            %li
-              %a{:href => "post-1.html"} Post Layout 1
-            %li
-              %a{:href => "post-2.html"} Post Layout 2
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Contact
-          %ul.dropdown-menu
-            %li
-              %a{:href => "contact-1.html"} Contact 1
-            %li
-              %a{:href => "contact-2.html"} Contact 2
+              %a{:href => "/courses"} Courses
+        %li{class: "dropdown #{'active' if request.path.start_with?('/tickets')}"}
+          %a{:href => "/tickets"} Airline Tickets
+        %li{class: "dropdown #{'active' if request.path.start_with?('/hotel')}"}
+          %a{:href => "/hotel"} Hotel
+        %li{class: "dropdown #{'active' if request.path.start_with?('/rent-bus')}"}
+          %a{:href => "/rent-bus"} Rent Bus
+        %li{class: "dropdown #{'active' if request.path.start_with?('/about-us')}"}
+          %a{:href => "/about-us"} Contact
       / /.nav
     / /.navbar-collapse
   / /.container
