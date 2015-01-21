@@ -1,4 +1,17 @@
 %section
+  .row   
+    .col-xs-12.col-sm-6.portfolio-item-wrapper.artwork.creative
+      .portfolio-item
+        .portfolio-thumb
+          %img.img-responsive{src: 'assets/img/portfolio/photo (1).jpg', alt: 'dddd ddd'}
+          .image-overlay
+          %a.portfolio-zoom{href: 'assets/img/portfolio/photo (1).jpg'}
+            %i.fa.fa-eye
+          %a.portfolio-link{href: 'portfolio-item-1.html'}
+            %i.fa.fa-link
+        .portfolio-details
+          %h5 this is the item
+          %p this is the description here.
   .container
     %ul.tagcloud-list
       - Destination.a_order.visible.each do |d|
