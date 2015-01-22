@@ -12,6 +12,34 @@
         .portfolio-details
           %h5 this is the item
           %p this is the description here.
+    .col-xs-12.col-sm-6.col-md-4
+      %article.post.pad-0
+        .post-slider
+          #carousel-example-generic-1.carousel.slide
+            / Wrapper for slides
+            .carousel-inner
+              .item.active
+                %img.img-responsive{:alt => "Carousel Image", :src => "assets/img/blog/photo (9).jpg"}
+              .item
+                %img.img-responsive{:alt => "Carousel Image", :src => "assets/img/blog/photo (10).jpg"}
+              .item
+                %img.img-responsive{:alt => "Carousel Image", :src => "assets/img/blog/photo (13).jpg"}
+            / Controls
+            %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic-1"}
+              %span.glyphicon.glyphicon-chevron-left
+            %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic-1"}
+              %span.glyphicon.glyphicon-chevron-right
+        / /.post-slider
+        .post-details
+          %h5.post-title
+            %a{:href => "post-1.html"} Complete Guide to What’s New in Adobe Photoshop 14.1
+          %span.post-meta
+            %i.fa.fa-time
+            15 July 2013, 20:43 PM
+        / /.post-details
+      / /.post
+    / /.col-md-4
+
   .container
     %ul.tagcloud-list
       - Destination.a_order.visible.each do |d|

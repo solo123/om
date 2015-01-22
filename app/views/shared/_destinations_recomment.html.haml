@@ -11,16 +11,17 @@
     .row.flush
       #caroufredsel-portfolio-container
         - Destination.recomment.limit(8).each do |d|
-          .col-xs-12.col-sm-6.col-md-4.portfolio-item-wrapper
-            .portfolio-item
-              .portfolio-thumb
-                %img.img-responsive{:alt => "1st Portfolio Thumb", :src => "assets/img/portfolio/photo (1).jpg"}
-                  .image-overlay
-                  %a.portfolio-zoom{:href => "assets/img/portfolio/photo (1).jpg", :rel => "prettyPhoto[pp_gal]"}
-                    %i.fa.fa-eye
-                  %a.portfolio-link{:href => "portfolio-item-1.html"}
-                    %i.fa.fa-link
-              .portfolio-details
-                %h5 1st Portfolio Item
-                %p Nullam id dolor id nibh ultricies vehicula.
-          / /.portfolio-item-wrapper      
+          - if d.description
+            .col-xs-12.col-sm-6.col-md-4.portfolio-item-wrapper
+              .portfolio-item
+                .portfolio-thumb
+                  %img.img-responsive{:alt => d.description.local_title(locale), :src => "#{$redis.get(:image_site_path)}/#{d.title_photo.pic.url(:large)}" }
+                    .image-overlay
+                    %a.portfolio-zoom{:href => "#{$redis.get(:image_site_path)}/#{d.title_photo.pic.url(:large)}", :rel => "prettyPhoto[pp_gal]"}
+                      %i.fa.fa-eye
+                    %a.portfolio-link{:href => d.description.local_title(locale)}
+                      %i.fa.fa-link
+                .portfolio-details
+                  %h5= d.description.local_title(locale)
+                  %p d.description.local_title(locale)
+            / /.portfolio-item-wrapper      
