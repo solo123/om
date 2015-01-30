@@ -1,4 +1,4 @@
-%section#recomment_destinations.pad-0
+%section#blog-posts.pad-25
   .container
     .subpage-title
       %h5 Recomment Destinations
@@ -9,19 +9,19 @@
         %span#portfolio-next.next.black
           %i.fa.fa-angle-right
     .row.flush
-      #caroufredsel-portfolio-container
+      #caroufredsel-blog-posts-container
         - Destination.recomment.limit(8).each do |d|
           - if d.description
-            .col-xs-12.col-sm-6.col-md-4.portfolio-item-wrapper
-              .portfolio-item
-                .portfolio-thumb
-                  %img.img-responsive{:alt => d.description.local_title(locale), :src => "#{$redis.get(:image_site_path)}/#{d.title_photo.pic.url(:large)}" }
-                    .image-overlay
-                    %a.portfolio-zoom{:href => "#{$redis.get(:image_site_path)}/#{d.title_photo.pic.url(:large)}", :rel => "prettyPhoto[pp_gal]"}
-                      %i.fa.fa-eye
-                    %a.portfolio-link{:href => d.description.local_title(locale)}
-                      %i.fa.fa-link
-                .portfolio-details
-                  %h5= d.description.local_title(locale)
-                  %p d.description.local_title(locale)
-            / /.portfolio-item-wrapper      
+            .col-xs-12.col-sm-6.col-md-4
+              %article.post.pad-0
+                .post-thumb
+                  %a{href: "destination/1"}
+                    %img.img-responsive{:alt => d.description.local_title(locale), :src => "#{$redis.get(:image_site_path)}/#{d.title_photo.pic.url(:large)}" }
+                .post-details
+                  %h5.post-title
+                    %a{href: "destination/1"}= d.description.local_title(locale)
+                  %span.post-meta
+                    %i.fa.fa-time
+                    10 July 2013, 20:43pm
+
+
