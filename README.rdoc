@@ -1,5 +1,13 @@
-== Update History
+== Redis 
+admin_path, website_name
 
+== Version 2.0
+* 2014-03-05
+. 后台界面使用 color admin (bootstrap3)
+. 前台界面使用 Retouch (bootstrap3)
+
+
+== Update History
 . 30分钟不操作要求重新登录；
 . 在DEBUG运行状态也可以切换中英文；
 . 中文Terms&conditions, about-us;

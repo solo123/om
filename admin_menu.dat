@@ -1,7 +1,7 @@
 >Data
-Destinations|destination|destinations_path
-Tours|tours|tours_path
-Schedules|schedules|schedules_path
+Destinations|destination|destinations
+Tours|tours|tours
+Schedules|schedules|schedules
 Vehicles|buses|buses_path
 Pages|pages|pages_path
 Companies|companies|companies_path
