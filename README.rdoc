@@ -1,3 +1,10 @@
+== install
+rails generate simple_form:install
+redis
+rake travel_admin:install:migrations
+rails generate comfy:cms
+rake db:migrate
+
 == Update History
 
 . 30分钟不操作要求重新登录；

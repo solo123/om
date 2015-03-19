@@ -1,7 +1,7 @@
 Omei::Application.routes.draw do
   comfy_route :cms_admin, :path => '/cms-admin'
 
-  mount RailsAdmin::Engine => '/radmin', as: 'rails_admin'
+  #mount RailsAdmin::Engine => '/radmin', as: 'rails_admin'
   devise_for :employees, :skip => [:registrations]
     as :employee do
       get '/employees/edit' => 'devise/registrations#edit', :as => 'edit_employee_registration'
