@@ -31,4 +31,3 @@ WillPaginate::ViewHelpers.pagination_options[:class] = 'pagination'
 WillPaginate::ViewHelpers.pagination_options[:previous_label] = '&laquo;'
 WillPaginate::ViewHelpers.pagination_options[:next_label] = '&raquo;'
 
-APP_CONFIG = Redis.new(host: 'localhost', port: 6379)

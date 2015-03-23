@@ -5,8 +5,19 @@ rake travel_admin:install:migrations
 rails generate comfy:cms
 rake db:migrate
 
+rake db:seed
+
+wget http://download.redis.io/redis-stable.tar.gz
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make
+
+redis-server
+redis-cli ping
+
 == Redis
 admin_path, website_name
+
 
 == Version 2.0
 * 2014-03-05
