@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320041330) do
+ActiveRecord::Schema.define(version: 20150325150506) do
 
   create_table "account_histories", force: :cascade do |t|
     t.string   "balance_object_type"
@@ -58,15 +58,6 @@ ActiveRecord::Schema.define(version: 20150320041330) do
     t.string   "url"
     t.string   "image_type"
     t.integer  "status",     default: 0
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "app_configurations", force: :cascade do |t|
-    t.string   "key"
-    t.string   "title"
-    t.string   "val"
-    t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -310,6 +301,7 @@ ActiveRecord::Schema.define(version: 20150320041330) do
   create_table "destinations", force: :cascade do |t|
     t.integer  "city_id"
     t.integer  "title_photo_id"
+    t.string   "tag_name"
     t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -335,6 +327,9 @@ ActiveRecord::Schema.define(version: 20150320041330) do
     t.string   "pin"
     t.date     "birthday"
     t.string   "roles"
+    t.string   "email"
+    t.string   "address"
+    t.string   "telephone"
     t.integer  "title_photo_id"
     t.integer  "status",         default: 0
     t.datetime "created_at"
@@ -577,12 +572,12 @@ ActiveRecord::Schema.define(version: 20150320041330) do
     t.string   "photo_data_type"
     t.integer  "photo_data_id"
     t.integer  "created_by"
+    t.integer  "bytes"
+    t.string   "url"
+    t.string   "public_id"
+    t.string   "thumbnail_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pic_file_name"
-    t.string   "pic_content_type"
-    t.integer  "pic_file_size"
-    t.datetime "pic_updated_at"
   end
 
   create_table "preferences", force: :cascade do |t|
@@ -761,6 +756,9 @@ ActiveRecord::Schema.define(version: 20150320041330) do
     t.integer  "user_level",     default: 0
     t.string   "login_name"
     t.string   "pin"
+    t.string   "email"
+    t.string   "telephone"
+    t.string   "address"
     t.integer  "title_photo_id"
     t.integer  "status",         default: 0
     t.datetime "created_at"
