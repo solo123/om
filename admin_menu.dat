@@ -3,28 +3,27 @@ Destinations|destination|destinations
 Tours|tours|tours
 Schedules|schedules|schedules
 Vehicles|buses|buses
-Pages|pages|pages
-Companies|companies|companies
-Employees|employees|employees
+Users|user_infos|user_infos
 >Orders
-Orders|orders|orders_path
-Credit Cards|credit_cards|pay_credit_cards_path
-Users|user_infos|user_infos_path
-Emails|emails|emails_path
-Telephones|telephones|telephones_path
-Addresses|addresses|addresses_path
+Orders|orders|orders
+Credit Cards|credit_cards|pay_credit_cards
+Emails|emails|emails
+Telephones|telephones|telephones
+Addresses|addresses|addresses
 >Accounts
-Accounts|accounts|accounts_path
-Payments|payments|payments_path
-Vouchers|vouchers|vouchers_path
-Company Receivables|company_receivables|company_receivables_path
+Accounts|accounts|accounts
+Payments|payments|payments
+Vouchers|vouchers|vouchers
+Company Receivables|company_receivables|company_receivables
 >Reports
 Vehicles Shifts|shifts_buses|shifts_buses_path
-Employees Shifts|shifts_employee|shifts_employee_infos_path
+Employees Shifts|shifts_employee|shifts_employee_infos
 >Manage
+My Account|my_account|employees
 Employees|employee_infos|employee_infos
-Input Types|input_types|input_types_path
-Configurations|configurations|app_configurations_path
+Companies|companies|companies
+Presettings|input_types|input_types
+Configurations|configurations|app_configurations
 >Admin|is_admin
 Reset schedules data|abc|"admin/reset_schedules"
 Auto fill user payment name|abc|"admin/autofill_pname"

@@ -6,13 +6,6 @@ GIT
       actionpack (>= 3.2)
       railties (>= 3.2)
 
-GIT
-  remote: git://github.com/francisd/rails3-jquery-autocomplete.git
-  revision: 9884a40f2bb1a8fa3ffab445e6d2c74c3ee99a0d
-  specs:
-    rails3-jquery-autocomplete (1.0.11)
-      rails (>= 3.0)
-
 PATH
   remote: ../travel_admin
   specs:
@@ -77,6 +70,8 @@ GEM
       sass (>= 3.2.19)
     bootstrap_form (2.3.0)
     builder (3.2.2)
+    byebug (4.0.5)
+      columnize (= 0.9.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cloudinary (1.0.82)
@@ -93,6 +88,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1)
+    columnize (0.9.0)
     comfortable_mexican_sofa (1.12.7)
       active_link_to (>= 1.0.0)
       bootstrap-sass (>= 3.2.0)
@@ -196,6 +192,8 @@ GEM
     rails-i18n (4.0.4)
       i18n (~> 0.6)
       railties (~> 4.0)
+    rails4-autocomplete (1.1.1)
+      rails (>= 3.0)
     railties (4.2.1)
       actionpack (= 4.2.1)
       activesupport (= 4.2.1)
@@ -283,6 +281,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (= 3.1.2)
   best_in_place!
+  byebug
   cloudinary
   coffee-rails (~> 4.1.0)
   comfortable_mexican_sofa
@@ -295,7 +294,7 @@ DEPENDENCIES
   kaminari
   paperclip
   rails (= 4.2.1)
-  rails3-jquery-autocomplete!
+  rails4-autocomplete
   ransack
   redis-rails
   sass-rails (~> 5.0)

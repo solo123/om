@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325150506) do
+ActiveRecord::Schema.define(version: 20150423091753) do
 
   create_table "account_histories", force: :cascade do |t|
     t.string   "balance_object_type"
@@ -409,6 +409,43 @@ ActiveRecord::Schema.define(version: 20150325150506) do
     t.datetime "updated_at"
   end
 
+  create_table "message_receipts", force: :cascade do |t|
+    t.integer  "message_id"
+    t.integer  "employee_info_id"
+    t.integer  "status",           default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "message_receipts", ["employee_info_id"], name: "index_message_receipts_on_employee_info_id"
+  add_index "message_receipts", ["message_id"], name: "index_message_receipts_on_message_id"
+
+  create_table "message_refs", force: :cascade do |t|
+    t.integer  "message_id"
+    t.string   "ref_title"
+    t.string   "ref_url"
+    t.string   "ref_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "message_refs", ["message_id"], name: "index_message_refs_on_message_id"
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "creator_id"
+    t.string   "send_to"
+    t.integer  "message_type"
+    t.string   "message_title"
+    t.text     "message_body"
+    t.integer  "reply_to_id_id"
+    t.integer  "status",         default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "messages", ["creator_id"], name: "index_messages_on_creator_id"
+  add_index "messages", ["reply_to_id_id"], name: "index_messages_on_reply_to_id_id"
+
   create_table "order_details", force: :cascade do |t|
     t.integer  "order_id"
     t.string   "pickup"
@@ -748,6 +785,20 @@ ActiveRecord::Schema.define(version: 20150325150506) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "transfers", force: :cascade do |t|
+    t.integer  "from_account_id"
+    t.integer  "to_account_id"
+    t.decimal  "amount",           precision: 8, scale: 2,             null: false
+    t.integer  "employee_info_id"
+    t.integer  "status",                                   default: 0
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+  end
+
+  add_index "transfers", ["employee_info_id"], name: "index_transfers_on_employee_info_id"
+  add_index "transfers", ["from_account_id"], name: "index_transfers_on_from_account_id"
+  add_index "transfers", ["to_account_id"], name: "index_transfers_on_to_account_id"
 
   create_table "user_infos", force: :cascade do |t|
     t.integer  "user_id"

@@ -1,7 +1,7 @@
 <div class="login-content">
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), class: 'margin-bottom-0') do |f| %>
         <div class="form-group m-b-20">
-          <%= f.text_field :login, class: 'form-control input-lg', placeholder: 'Account name / Email Address' %>
+          <%= f.text_field :login, class: 'form-control input-lg', autofocus: 'autofocus', placeholder: 'Account name / Email Address' %>
         </div>
         <div class="form-group m-b-20">
           <%= f.password_field :password, class: 'form-control input-lg', placeholder: 'Password' %>

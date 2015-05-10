@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+gem 'byebug', group: [:development, :test]
 
 #
 gem 'bcrypt-ruby', '3.1.2', :require => 'bcrypt'
@@ -36,7 +37,7 @@ gem 'best_in_place', :git => 'git://github.com/bernat/best_in_place.git'
 gem 'i18n-missing_translations'
 gem 'haml-rails'
 gem 'simple_form'
-gem 'rails3-jquery-autocomplete', :git => 'git://github.com/francisd/rails3-jquery-autocomplete.git'
+gem 'rails4-autocomplete'
 
 gem 'travel_admin', :path => '../travel_admin'
 gem 'travel_website', :path => '../travel_website'
